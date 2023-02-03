@@ -1,4 +1,5 @@
 # DRF API with Frontend markup
+- Django Default user Authentication 
 - JWT Authorization
 - Custom User Model
 - Static files from WhiteNoise
