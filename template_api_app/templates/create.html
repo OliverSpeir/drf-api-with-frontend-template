@@ -1,34 +1,40 @@
 {%  extends 'base.html' %}
 
 {% block content %}
-    <div class="container flex flex-col items-center bg-gray-100">
-    <h2 class="pb-8 text-center text-4xl font-extrabold dark:text-white">Create New Item</h2>
+    <div class="container flex flex-col items-center">
+    <h2 class="pb-8 text-center text-4xl font-extrabold dark:text-white">
+        Create New Item</h2>
     <form method="post">
   {% csrf_token %}
     <div class="mb-6">
-        <label for="username" class="text-left block mb-2 text-sm font-medium text-gray-900 dark:text-white">Item Name:</label>
-        {{form.name}}
+        <label for="username" class="text-left block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+            Item Name:</label>
+            {{form.name}}
     </div>
     <div class="mb-6">
-        <label for="password1" class="text-left block mb-2 text-sm font-medium text-gray-900 dark:text-white">added by:</label>
+        <label for="password1" class="text-left block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+            Added by:</label>
             {{form.creator}}
      </div>
     <div class="mb-6">
-        <label for="password1" class="text-left block mb-2 text-sm font-medium text-gray-900 dark:text-white">image url:</label>
+        <label for="password1" class="text-left block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+            Photo of Item:</label>
             {{form.image_url}}
      </div>
     <div class="mb-6">
-        <label for="password1" class="text-left block mb-2 text-sm font-medium text-gray-900 dark:text-white"> Description:</label>
+        <label for="password1" class="text-left block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+            Description:</label>
             {{form.description}}
      </div>
-    <div class="container flex flex-col items-center bg-gray-100">
-    <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm
-     px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+    <div class="container flex flex-col items-center">
+    <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300
+                                font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600
+                                dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
     Create
     </button>
     <a href="{% url 'list' %}"
      class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm
-     px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+            px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
     Cancel</a>
     </div>
 </form>

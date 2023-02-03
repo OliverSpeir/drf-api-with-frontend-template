@@ -19,6 +19,7 @@ class ItemCreateView(CreateView):
     template_name = 'create.html'
     model = Item
     form_class = CustomForm
+    # form = form_class(initial={'name': 'asfsdfd', 'description': ''})
     success_url = reverse_lazy('list')
 
 

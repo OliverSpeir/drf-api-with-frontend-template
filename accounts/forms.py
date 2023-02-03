@@ -12,14 +12,14 @@ class CustomUserCreationForm(UserCreationForm):
                       " focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 "
                       "dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"),
             'placeholder': 'username',
-            "required": ''
+            "required": True
             })
         self.fields['password1'].widget.attrs.update({
             'class': ("bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500"
                       " focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 "
                       "dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"),
             'placeholder': 'password',
-            "required": '',
+            "required": True,
             'maxlength': '22',
             'minlength': '8'
             })
@@ -28,18 +28,16 @@ class CustomUserCreationForm(UserCreationForm):
                       "focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 "
                       "dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"),
             'placeholder': 'password',
-            "required": '',
+            "required": True,
             'maxlength': '22',
             'minlength': '8'
             })
-    email = forms.EmailField(widget=forms.TextInput(attrs={
-        "class":  ("bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 "
-                   "focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 "
-                   "dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"),
-        "type": "email",
-        "placeholder": "email",
-        "required": ""
-    }), required=False)
+        self.fields['email'].widget.attrs.update({
+            'class': ("bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 "
+                      "focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 "
+                      "dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"),
+            'placeholder': 'email',
+            })
 
     class Meta:
         model = CustomUser
@@ -47,7 +45,6 @@ class CustomUserCreationForm(UserCreationForm):
 
 
 class CustomUserChangeForm(UserChangeForm):
-    email = forms.EmailField(label='email')
 
     class Meta:
         model = CustomUser

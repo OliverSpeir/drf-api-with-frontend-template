@@ -4,7 +4,6 @@ from django.db import models
 
 
 class CustomUser(AbstractUser):
-    email = models.EmailField()
     # add additional fields in here
 
     def __str__(self):

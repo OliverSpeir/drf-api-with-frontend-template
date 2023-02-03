@@ -3,10 +3,10 @@
 {% block title %}Create Account{% endblock %}
 {% block content %}
 
-<div class="container flex flex-col items-center bg-gray-100">
+<div class="container flex flex-col items-center">
     <h2 class="pb-8 text-center text-4xl font-extrabold dark:text-white">
         Create Account</h2>
-    <form method="post" class="flex flex-col items-center bg-gray-100">
+    <form method="post" class="flex flex-col items-center">
       {% csrf_token %}
         <div class="mb-6">
             <label for="username" class="text-center block mb-2 text-sm font-medium text-gray-900 dark:text-white">
