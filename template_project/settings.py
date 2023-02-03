@@ -41,9 +41,11 @@ INSTALLED_APPS = [
 
     # third party
     'rest_framework',
+    'compressor',
 
     # local
-    'template_app',
+    'accounts',
+    'template_api_app',
 ]
 
 MIDDLEWARE = [
@@ -62,7 +64,7 @@ ROOT_URLCONF = "template_project.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [BASE_DIR / "templates"],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -83,18 +85,18 @@ WSGI_APPLICATION = "template_project.wsgi.application"
 #
 # changed from template
 DATABASES = {
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.sqlite3',
-    #     'NAME': 'mydatabase',
-    # }
-    "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": "postgres",
-        "USER": "postgres",
-        "PASSWORD": "postgres",
-        "HOST": "db",
-        "PORT": 5432,
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'mydatabase',
     }
+    # "default": {
+    #     "ENGINE": "django.db.backends.postgresql",
+    #     "NAME": "postgres",
+    #     "USER": "postgres",
+    #     "PASSWORD": "postgres",
+    #     "HOST": "db",
+    #     "PORT": 5432,
+    # }
 }
 
 
@@ -151,4 +153,15 @@ REST_FRAMEWORK = {
     ]
 }
 
-STATIC_ROOT = BASE_DIR / "staticfiles"  # added to template
+STATIC_ROOT = BASE_DIR / "staticfiles"  # for WhiteNoise
+
+DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+AUTH_USER_MODEL = "accounts.CustomUser"  # for custom user model
+LOGIN_REDIRECT_URL = "home"  # for custom user model
+LOGOUT_REDIRECT_URL = "home"  # for custom user model
+COMPRESS_ROOT = BASE_DIR / 'static'  # for custom user model
+
+COMPRESS_ENABLED = True  # for tailwind
+
+STATICFILES_FINDERS = ('compressor.finders.CompressorFinder',)  # for tailwind static files

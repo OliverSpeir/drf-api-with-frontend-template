@@ -1,0 +1,37 @@
+{#lines 2 - 37 added in template#}
+{% extends "base.html" %}
+{% block title %}Create Account{% endblock %}
+{% block content %}
+
+<div class="container flex flex-col items-center bg-gray-100">
+    <h2 class="pb-8 text-center text-4xl font-extrabold dark:text-white">
+        Create Account</h2>
+    <form method="post" class="flex flex-col items-center bg-gray-100">
+      {% csrf_token %}
+        <div class="mb-6">
+            <label for="username" class="text-center block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                User Name:</label>
+            {{form.username}}
+        </div>
+        <div class="mb-6">
+            <label for="email" class="text-center block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                Email: </label>
+            {{form.email}}
+        </div>
+        <div class="mb-6">
+            <label for="password1" class="text-center block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                Password:</label>
+            {{form.password1}}
+         </div>
+        <div class="mb-6">
+            <label for="password2" class="text-center block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                Confirm Password:</label>
+            {{form.password2}}
+        </div>
+        <button type="submit" class=" text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none
+                                    focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5
+                                    text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+            Create Account</button>
+    </form>
+</div>
+{% endblock %}
