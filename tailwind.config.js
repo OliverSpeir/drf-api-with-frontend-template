@@ -3,12 +3,11 @@ module.exports = {
   darkMode: 'class',
   content:  [
       './templates/**/*.html',
-      './node_modules/flowbite/**/*.js'
+      './**/**/*.html',
   ],
   theme: {
     extend: {},
   },
   plugins: [
-        require('flowbite/plugin')
     ],
 }

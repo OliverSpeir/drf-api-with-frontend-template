@@ -1,15 +1,15 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="container flex flex-col items-center bg-gray-100">
-<div class="relative overflow-x-auto mb-6">
-    <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+<div class="flex flex-col items-center ">
+<div class="overflow-x-auto mb-6">
+    <table class="text-center w-full text-sm text-gray-500 dark:text-white">
+        <thead class="uppercase bg-gray-50 dark:bg-gray-700">
             <tr>
                 <th scope="col" class="px-6 py-3">
                     property name
                 </th>
-                <th scope="col" class="px-6 py-3 text-left">
+                <th scope="col" class="text-center px-6 py-3 text-left">
                     value
                 </th>
             </tr>
@@ -19,7 +19,7 @@
                 <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                     name
                 </th>
-                <td class="px-6 py-4">
+                <td class="dark:bg-gray-700 px-6 py-4">
                     {{ object.name }}
                 </td>
             </tr>
@@ -27,39 +27,41 @@
                 <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                     added_by
                 </th>
-                <td class="px-6 py-4">
-                    {{ object.added_by }}
+                <td class="dark:bg-gray-700 px-6 py-4">
+                    {{ object.creator }}
                 </td>
             </tr>
                 <tr class="bg-white dark:bg-gray-800">
                 <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                     image_url
                 </th>
-                <td class="px-6 py-4">
+                <td class="dark:bg-gray-700 px-6 py-4">
                     {{ object.image_url }}
                 </td>
                     <tr class="bg-white dark:bg-gray-800">
                 <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                     description
                 </th>
-                <td class="px-6 py-4">
+                <td class="dark:bg-gray-700 px-6 py-4">
                     {{ object.description }}
                 </td>
             </tr>
         </tbody>
     </table>
 </div>
-<a href="{% url 'update' object.pk %}" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm
-     px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+<a href="{% url 'update' object.pk %}" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300
+                                            font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600
+                                            dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
 Update Item
 </a>
-<a href="{% url 'delete' object.pk %}" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm
-     px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+<a href="{% url 'delete' object.pk %}" class="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-blue-300
+                                            font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-red-700
+                                            dark:hover:bg-red-700 focus:outline-none dark:focus:ring-red-800">
 Delete Item
 </a>
-  <a href="{% url 'list' %}"
-     class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm
-     px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+  <a href="{% url 'list' %}" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300
+                                    font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600
+                                    dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
     Back to List</a>
 </div>
 {% endblock content %}
