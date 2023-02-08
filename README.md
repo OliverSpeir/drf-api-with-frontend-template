@@ -6,6 +6,7 @@
 - Gunicorn Production Server
 - Styled Login, User Create, and basic CRUD forms 
 - Docker auto migrates 
+- 
 
 ## To Do:
 - put a create super user migration in accounts that pulls from .env
@@ -15,5 +16,10 @@
 
 ### References
 
-- https://stackoverflow.com/questions/2988548/overriding-initial-value-in-modelform
 - https://docs.djangoproject.com/en/4.1/ref/forms/widgets/
+
+
+### Setup
+
+-  `python -c "import secrets; print(secrets.token_urlsafe())"`
+  - makes secret key 

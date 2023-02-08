@@ -7,9 +7,12 @@ from .models import Item
 class CustomForm(ModelForm):
     def __init__(self, *args, **kwargs):
         super(CustomForm, self).__init__(*args, **kwargs)
-        self.initial['name'] = ''
-        self.initial['description'] = ''
-        self.initial['image_url'] = ''
+        # self.initial['name'] = ''
+        # self.initial['description'] = ''
+        # self.initial['image_url'] = ''
+        self.fields['image_url'].required = False
+        self.fields['name'].required = False
+        self.fields['description'].required = False
 
 
     class Meta:
@@ -35,7 +38,6 @@ class CustomForm(ModelForm):
                                                          "dark:placeholder-gray-400 dark:text-white "
                                                          "dark:focus:ring-blue-500 dark:focus:border-blue-500",
                                                 'placeholder': 'URL',
-                                                'required': False
                                                 }),
             'description': forms.TextInput(attrs={'class': "block w-full p-4 text-gray-900 border border-gray-300 "
                                                            "rounded-lg bg-gray-50 sm:text-md focus:ring-blue-500 "
